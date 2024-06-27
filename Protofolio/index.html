@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet" />
+    <title>Amos Ziliwu</title>
+  </head>
+  <body>
+    <header>
+      <input
+        hidden
+        class="check-icon"
+        id="check-icon"
+        name="check-icon"
+        type="checkbox" />
+      <label class="icon-menu" for="check-icon">
+        <div class="bar bar--1"></div>
+        <div class="bar bar--2"></div>
+        <div class="bar bar--3"></div>
+      </label>
+      <h1>Amos Ziliwu</h1>
+    </header>
+
+    <div class="container">
+      <!-- Sidebar -->
+      <div class="sidebar">
+        <video autoplay loop muted>
+          <source src="video_navbar.mp4" type="video/mp4" />
+        </video>
+        <ul>
+          <li data-target="home">
+            <a href="#"><i class="fas fa-home"></i> Home</a>
+          </li>
+          <li data-target="about">
+            <a href="#"><i class="fas fa-user"></i> About Me</a>
+          </li>
+          <li data-target="skills">
+            <a href="#"><i class="fas fa-cogs"></i> Skills</a>
+          </li>
+          <li data-target="projects">
+            <a href="#"><i class="fas fa-project-diagram"></i> Projects</a>
+          </li>
+          <li data-target="certifications">
+            <a href="#"><i class="fas fa-certificate"></i> Certifications</a>
+          </li>
+          <li data-target="contact">
+            <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Content Sections -->
+      <div class="content active" id="home">
+        <div>
+          <img
+            src="mountains-lake.jpg"
+            alt="Foto Saya"
+            style="border-radius: 50%" />
+        </div>
+        <div class="content-teks">
+          <h1>
+            <span class="typing-effect">Amos Ziliwu</span>
+          </h1>
+          <p class="typing-effect">
+            <span class="typing-effect-span">Fullstack Developer</span>
+            <span class="typing-effect-span">Web Developer</span>
+            <span class="typing-effect-span">Data Scientist</span>
+          </p>
+        </div>
+      </div>
+
+      <div class="content" id="about">
+        <div class="content-teks">
+          <h1>
+            <span class="typing-effect">About Me</span>
+          </h1>
+          <p class="typing-effect">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            nulla nobis libero animi vel, suscipit blanditiis doloribus eligendi
+            ipsum dolores. Harum doloribus asperiores officia fugiat excepturi
+            incidunt consectetur, hic facilis?
+          </p>
+        </div>
+      </div>
+      <div class="content" id="skills">
+        <div class="content-teks">
+          <h1>
+            <span class="typing-effect">Skills</span>
+          </h1>
+          <p class="typing-effect">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            nulla nobis libero animi vel, suscipit blanditiis doloribus eligendi
+            ipsum dolores. Harum doloribus asperiores officia fugiat excepturi
+            incidunt consectetur, hic facilis?
+          </p>
+        </div>
+      </div>
+      <div class="content" id="projects">
+        <div class="content-teks">
+          <h1>
+            <span class="typing-effect">Projects</span>
+          </h1>
+          <p class="typing-effect">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            nulla nobis libero animi vel, suscipit blanditiis doloribus eligendi
+            ipsum dolores. Harum doloribus asperiores officia fugiat excepturi
+            incidunt consectetur, hic facilis?
+          </p>
+        </div>
+      </div>
+      <div class="content" id="certifications">
+        <div class="content-teks">
+          <h1>
+            <span class="typing-effect">Certifications</span>
+          </h1>
+          <p class="typing-effect">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            nulla nobis libero animi vel, suscipit blanditiis doloribus eligendi
+            ipsum dolores. Harum doloribus asperiores officia fugiat excepturi
+            incidunt consectetur, hic facilis?
+          </p>
+        </div>
+      </div>
+      <div class="content" id="contact">
+        <div class="content-teks">
+          <h1>
+            <span class="typing-effect">Contact</span>
+          </h1>
+          <p class="typing-effect">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+            nulla nobis libero animi vel, suscipit blanditiis doloribus eligendi
+            ipsum dolores. Harum doloribus asperiores officia fugiat excepturi
+            incidunt consectetur, hic facilis?
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sidebar = document.querySelector(".sidebar");
+        const checkIcon = document.querySelector("#check-icon");
+        const contentSections = document.querySelectorAll(".content");
+
+        checkIcon.addEventListener("change", function () {
+          sidebar.classList.toggle("active");
+        });
+
+        const menuItems = document.querySelectorAll(".sidebar ul li");
+        menuItems.forEach((item) => {
+          item.addEventListener("click", function () {
+            const target = this.getAttribute("data-target");
+            contentSections.forEach((section) => {
+              if (section.id === target) {
+                section.classList.add("active");
+              } else {
+                section.classList.remove("active");
+              }
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
